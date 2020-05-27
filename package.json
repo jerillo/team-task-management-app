@@ -1,0 +1,23 @@
+{
+	"name": "team-task-management-app",
+	"version": "1.0.0",
+	"description": "A team task management tool to facilitate collaborative projects",
+	"main": "app.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node app.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/jerillo/team-task-management-app.git"
+	},
+	"author": "Jesnine Erillo",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/jerillo/team-task-management-app/issues"
+	},
+	"homepage": "https://github.com/jerillo/team-task-management-app#readme",
+	"dependencies": {
+		"express": "^4.17.1"
+	}
+}
