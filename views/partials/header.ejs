@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md mb-5 py-0 fixed-top">
+    <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-md py-0 fixed-top">
         <a href="/" class="navbar-brand">TEAM TASKER</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,12 +40,15 @@
                     <li class="nav-item">
                         <a href="/tasklists" class="nav-link">YOUR LISTS</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="/tasklists/new" class="nav-link">NEW LIST</a>
+                    </li>
                     <li class="nav-item"><a class="nav-link" href="/logout">LOGOUT</a></li>
                 <% } %> 
             </ul>
           </nav>
           
-          <div class="mb-5 pb-5"></div>
+          <div class="mb-5"></div>
 
           <div id="flash" class="container">
             <% if (error && error.length > 0) { %> 

@@ -11,6 +11,8 @@ body {
 
 #mainNavbar .nav-link {
 	color: white;
+	text-transform: uppercase;
+	margin-left: 1.25rem;
 }
 
 #mainNavbar .nav-link:hover {
@@ -24,6 +26,9 @@ body {
 
 .title {
 	color: white;
+	text-transform: uppercase;
+	margin-top: 6rem;
+	border-bottom: 2px solid #1b3b6f;
 }
 
 #header {
