@@ -7,6 +7,7 @@ require('dotenv').config();
 
 // Requiring routes
 const indexRoutes = require('./routes/index');
+const tasklistRoutes = require('./routes/tasklist');
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGODB_URI, {
@@ -21,6 +22,7 @@ app.set('view engine', 'ejs');
 
 // Routes
 app.use('/', indexRoutes);
+app.use('/tasklists', tasklistRoutes);
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
