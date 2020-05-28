@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 
 const TaskSchema = new mongoose.Schema({
-	Title: String,
-	Description: String,
-	Status: String,
-	Tasklist: {
+	title: String,
+	description: String,
+	status: String,
+	createdAt: { type: Date, default: Date.now },
+	tasklist: {
 		id: {
 			type: mongoose.Schema.Types.ObjectId,
 			ref: 'TaskList'
