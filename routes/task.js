@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/:task_id/new', (req, res) => {
+router.get('/new', (req, res) => {
 	res.send('create new task');
 });
 
-router.post('/:task_id', (req, res) => {
+router.post('/', (req, res) => {
 	res.send('new task added');
 });
 

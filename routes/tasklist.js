@@ -5,11 +5,11 @@ router.get('/', (req, res) => {
 	res.render('tasklist/index');
 });
 
-router.get('/:id/new', (req, res) => {
+router.get('/new', (req, res) => {
 	res.send('create new tasklist');
 });
 
-router.post('/:id', (req, res) => {
+router.post('/', (req, res) => {
 	res.send('new tasklist added');
 });
 
