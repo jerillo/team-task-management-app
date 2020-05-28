@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const methodOverride = require('method-override');
+const flash = require('connect-flash');
 const User = require('./models/user');
 
 // Environment variables setup
@@ -20,6 +21,7 @@ mongoose.connect(process.env.MONGODB_URI, {
 	useUnifiedTopology: true
 });
 
+app.use(flash());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
@@ -39,6 +41,13 @@ app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+app.use((req, res, next) => {
+	res.locals.currentUser = req.user;
+	res.locals.error = req.flash('error');
+	res.locals.success = req.flash('success');
+	next();
+});
 
 // Routes
 app.use('/', indexRoutes);
