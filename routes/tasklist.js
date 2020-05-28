@@ -1,15 +1,16 @@
 const express = require('express');
 const router = express.Router();
+const middleware = require('../middleware');
 
-router.get('/', (req, res) => {
+router.get('/', middleware.isLoggedIn, (req, res) => {
 	res.render('tasklist/index');
 });
 
-router.get('/new', (req, res) => {
+router.get('/new', middleware.isLoggedIn, (req, res) => {
 	res.render('tasklist/new');
 });
 
-router.post('/', (req, res) => {
+router.post('/', middleware.isLoggedIn, (req, res) => {
 	res.send('new tasklist added');
 });
 
