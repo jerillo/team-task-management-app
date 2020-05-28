@@ -31,6 +31,10 @@ body {
 	border-bottom: 2px solid #1b3b6f;
 }
 
+.btn.btn-success {
+	background-color: #1b3b6f;
+}
+
 #header {
 	height: 80vh;
 	color: white;
