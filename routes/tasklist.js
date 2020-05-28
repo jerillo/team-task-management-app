@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/new', (req, res) => {
-	res.send('create new tasklist');
+	res.render('tasklist/new');
 });
 
 router.post('/', (req, res) => {
