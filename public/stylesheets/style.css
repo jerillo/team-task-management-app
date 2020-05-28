@@ -4,7 +4,7 @@ body {
 }
 
 #mainNavbar {
-	font-size: 1.5rem;
+	font-size: 1.125rem;
 	font-weight: 100;
 	background: #a9cef4;
 }
@@ -16,7 +16,7 @@ body {
 }
 
 #mainNavbar .nav-link:hover {
-	color: #2b6ca9;
+	color: #3a73cf;
 }
 
 #mainNavbar .navbar-brand {
