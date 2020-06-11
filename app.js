@@ -1,25 +1,16 @@
 const express = require('express');
 const app = express();
-const mongoose = require('mongoose');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
 const methodOverride = require('method-override');
 const flash = require('connect-flash');
+const connectDB = require('./config/db');
 const User = require('./models/user');
 
 // Environment variables setup
 require('dotenv').config();
 
-// Requiring routes
-const indexRoutes = require('./routes/index');
-const tasklistRoutes = require('./routes/tasklist');
-const taskRoutes = require('./routes/task');
-
-// Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI, {
-	useNewUrlParser: true,
-	useUnifiedTopology: true
-});
+connectDB();
 
 app.use(flash());
 app.use(express.json());
@@ -49,10 +40,10 @@ app.use((req, res, next) => {
 	next();
 });
 
-// Routes
-app.use('/', indexRoutes);
-app.use('/tasklists', tasklistRoutes);
-app.use('/tasklists/:id/tasks', taskRoutes);
+// Defining routes
+app.use('/', require('./routes/index'));
+app.use('/tasklists', require('./routes/tasklist'));
+app.use('/tasklists/:id/tasks', require('./routes/task'));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
